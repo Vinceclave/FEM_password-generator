@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="clipboard">
+        <p>Copy to clipboard!</p>
+    </div>
+    <main>
+        <div class="password-container">
+            <div class="toggle-mode">
+                <div class="light-toggle"></div>
+            </div>
+          <div class="password-content-description">
+            <h2>Generate a </h2>
+            <p>Never use an insecure password again.</p>
+            <!-- <div class="password-customizer">
+              <h3>Customize your password</h3>
+                <label for="password-length">
+                    Set password length:
+                    <input id="password-length" type="number" placeholder="16">
+                </label>
+                <label for="digits">
+                    Use digits?
+                    <input checked type="checkbox" id=" password-number" class="checkbox" >
+                </label>
+                <label for="letters">
+                    Use letters
+                    <input  checked type="checkbox" id="password-letter" class="checkbox" >
+                </label>
+                <label for="special characters">
+                    Use special characters?
+                    <input checked type="checkbox" id="password-special-characters" class="checkbox" >
+                </label>
+            </div> -->
+            <button id="generate">Generate passwords</button>
+          </div>
+          <div class="generated-passwords">
+            <div  class="random-password" id="generated1"></div>
+            <div  class="random-password" id="generated2"></div>
+          </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

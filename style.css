@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    /* color */
+        --white: #FFFFFF;
+        --light-green-2: #4ADF86;
+        --light-green: #10B981;
+        --blue-dark: #1F2937;
+        --darker-blue: #273549;
+        --light-gray: #6B7280;
+        --light-mode-bg: #ECFDF5;
+        --body-color: #1C1C1C;
+        --light-mode-text: #2B283A;
+
+    /* Margin & Padding */
+        --space-4xs: clamp(0.31rem, calc(0.29rem + 0.12vw), 0.38rem);
+        --space-3xs: clamp(0.31rem, calc(0.29rem + 0.12vw), 0.38rem);
+        --space-2xs: clamp(0.69rem, calc(0.66rem + 0.12vw), 0.75rem);
+        --space-xs: clamp(1.00rem, calc(0.95rem + 0.24vw), 1.13rem);
+        --space-s: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.50rem);
+        --space-m: clamp(2.00rem, calc(1.90rem + 0.49vw), 2.25rem);
+        --space-l: clamp(2.63rem, calc(2.48rem + 0.73vw), 3.00rem);
+        --space-xl: clamp(3.94rem, calc(3.72rem + 1.10vw), 4.50rem);
+        --space-2xl: clamp(5.25rem, calc(4.96rem + 1.46vw), 6.00rem);
+        --space-3xl: clamp(7.88rem, calc(7.44rem + 2.20vw), 9.00rem);
+        --space-4xl: clamp(7.88rem, calc(7.44rem + 2.20vw), 9.00rem);
+        --space-5xl: clamp(7.88rem, calc(7.44rem + 2.20vw), 9.00rem);
+      
+        /* One-up pairs */
+        --space-4xs-3xs: clamp(0.31rem, calc(0.29rem + 0.12vw), 0.38rem);
+        --space-3xs-2xs: clamp(0.31rem, calc(0.14rem + 0.85vw), 0.75rem);
+        --space-2xs-xs: clamp(0.69rem, calc(0.52rem + 0.85vw), 1.13rem);
+        --space-xs-s: clamp(1.00rem, calc(0.80rem + 0.98vw), 1.50rem);
+        --space-s-m: clamp(1.31rem, calc(0.95rem + 1.83vw), 2.25rem);
+        --space-m-l: clamp(2.00rem, calc(1.61rem + 1.95vw), 3.00rem);
+        --space-l-xl: clamp(2.63rem, calc(1.89rem + 3.66vw), 4.50rem);
+        --space-xl-2xl: clamp(3.94rem, calc(3.13rem + 4.02vw), 6.00rem);
+        --space-2xl-3xl: clamp(5.25rem, calc(3.79rem + 7.32vw), 9.00rem);
+        --space-3xl-4xl: clamp(7.88rem, calc(7.44rem + 2.20vw), 9.00rem);
+        --space-4xl-5xl: clamp(7.88rem, calc(7.44rem + 2.20vw), 9.00rem);
+      
+        /* Custom pairs */
+        --space-s-l: clamp(1.31rem, calc(0.65rem + 3.29vw), 3.00rem);
+
+        --step--2: clamp(0.91rem, calc(0.89rem + 0.10vw), 0.96rem);
+        --step--1: clamp(1.09rem, calc(1.05rem + 0.21vw), 1.20rem);
+        --step-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.50rem);
+        --step-1: clamp(1.58rem, calc(1.46rem + 0.59vw), 1.88rem);
+        --step-2: clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
+        --step-3: clamp(2.27rem, calc(2.01rem + 1.29vw), 2.93rem);
+        --step-4: clamp(2.72rem, calc(2.36rem + 1.83vw), 3.66rem);
+        --step-5: clamp(3.27rem, calc(2.75rem + 2.56vw), 4.58rem);
+
+        --inter: 'Inter', sans-serif;
+        --karla: 'Karla', sans-serif;
+
+        --fw-400: 400;
+        --fw-500: 500;
+        --fw-800: 800;
+    }
+
+
+body {
+    position: relative;
+    background-color: var(--body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.clipboard {
+    top: 2em;
+    left: 2em;
+    background-color: var(--light-mode-bg);
+    position: absolute;
+    z-index: 1000;
+    padding: var(--space-s-m);
+    opacity: 0;
+}
+
+.clipboard-light-mode {
+    background-color: var(--body-color);
+    color: var(--white);
+}
+
+.clipboard-light-mode > p {
+    color: var(--light-mode-bg);
+}
+
+.clipboard p {
+    font-family: var(--inter);
+    color: var(--light-gray);
+}
+
+.popUp {
+    animation: popUp 3s ease-in-out 1;
+}
+
+@keyframes popUp {
+   0% {
+    opacity: 0;
+   }
+   
+   50% {
+    opacity: 1;
+   }
+
+   100% {
+    opacity: 0;
+   }
+}
+
+.password-container { 
+    position: relative;
+    width: clamp(320px, calc(100vw - 1em), 500px);
+    /* height: 600px; */
+    height: 550px;
+    background-color: var(--blue-dark);
+    /* padding: var(--space-2xl) var(--space-s-m); */
+    padding:  var(--space-s) var(--space-s-m);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+}
+
+.password-container-light-mode {
+    color: var(--light-mode-text);
+    background-color: var(--light-mode-bg);
+}
+
+
+.toggle-mode {
+    width: 50px;
+    height: 25px;
+    background-color: var(--l);
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    border: 1px solid var(--white);
+    border-radius: 2em;
+    box-shadow: 0 0 10px var(--light-gray);
+    transition: 0.3s ease-in-out;
+}
+
+.toggle-light-mode {
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    box-shadow: 0 0 10px var(--body-color);
+}
+
+.light-toggle {
+    width: 25px;
+    height: 23px;
+    background-color: var(--light-green-2);
+    border-radius: 5em;
+    transition: 0.3s ease-in-out;
+    border: 1px solid var(--body-color);
+}
+
+.dark-toggle { 
+    margin-left: 1.45em;
+    width: 25px;
+    height: 23px;
+    background-color: var(--body-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 5em;
+}
+
+.password-content-description h2 {
+    font-family: var(--karla);
+    font-size: var(--space-m);
+    font-weight: var(--fw-800);
+    line-height: 1;
+    color: var(--white);
+    height: 80px;
+    transition: 0.3s ease-in-out;
+}
+
+.password-content-description-light-mode h2 {
+    color: var(--body-color);
+}
+
+.password-content-description h2::after {
+    content: 'random password';
+    color: var(--light-green-2);
+    line-height: 1;
+    white-space: nowrap;    
+}
+
+.password-content-description p {
+    font-family: var(--inter);
+    font-size: var(--step-);
+    font-weight: var(--fw-400);
+    line-height: 1.5;
+    color: var(--light-gray);
+    margin-bottom: 2em;
+}
+/* 
+.password-customizer {
+    font-family: var(--inter);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    margin-bottom: 1.5em;
+    transition: 0.1s ease-in-out;
+} */
+/* 
+.password-customizer-light-mode {
+    color: var(--body-color);
+}
+
+.password-customizer input[type="checkbox"] {
+    caret-color: black;
+} */
+
+.password-content-description button {
+    cursor: pointer;
+    font-family: var(--inter);
+    font-weight: var(--fw-500);
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+    color: var(--white);
+    border-radius: 0.4em;
+    line-height: 1.3;
+    background: var(--light-green);
+}
+
+.generated-passwords {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.generated-passwords::before {
+    content: '';
+    background-color: var(--darker-blue);
+    width: 100%;
+    height: 1px;
+    color: white;
+    position: absolute;
+    top: -3em;
+}
+
+.generated-passwords-light-mode::before {
+    content: '';
+    background-color: var(--light-gray);
+    width: 100%;
+    height: 1px;
+    color: white;
+    position: absolute;
+    top: -3em;
+}
+
+
+.generated-passwords > div {
+    font-family: var(--inter);
+    font-size: var(--step--2);
+    font-weight: var(--fw-500);
+    background-color: var(--darker-blue);
+    color: var(--light-green-2);
+    width: 200px;
+    height: 40px;
+    padding: 0.5em 1em;
+    line-height: 1.5;
+    text-align: center;
+    -moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none
+}
+
+@media (max-width: 500px) {
+    .password-container {
+        padding: var(--space-l) var(--space-xs);
+    }
+    .generated-passwords {
+        flex-direction: column;
+    }
+
+    .generated-passwords::before{ 
+        top: -2em;
+    }
+
+    .generated-passwords > div {
+        width: 80%;
+        height: 50px;
+        line-height: 2.5;
+    }
+}
